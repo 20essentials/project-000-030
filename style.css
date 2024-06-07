@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: radial-gradient(transparent, #04aa6d);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  background-image: url('assets/campo.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 280px;
+  height: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(34deg) skew(-34deg, 0deg);
+}
+
+.ball {
+  position: absolute;
+  left: 48%;
+  top: 43%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(assets/ball.png);
+  animation: subir 1s ease-in-out infinite;
+  z-index: 50;
+}
+
+.shadow {
+  position: absolute;
+  left: 48%;
+  top: 49%;
+  width: 60px;
+  height: 20px;
+  background-color: #262626;
+  border-radius: 50%;
+  opacity: .8;
+  animation: shadow 1s linear infinite;
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-200px) rotate(180deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    opacity: .8;
+    scale: 1;
+  }
+  50% {
+    opacity: .3;
+    scale: .4;
+  }
+  100% {
+    opacity: .8;
+    scale: 1;
+  }
+}
+
+@media (width <= 700px) and (orientation: portrait) {
+
+}
+
+@media (width <= 1000px) and (orientation: landscape) {
+  .ball {
+    top: 33%;
+  }
+
+}
